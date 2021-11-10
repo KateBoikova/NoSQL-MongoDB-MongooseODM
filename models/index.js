@@ -9,3 +9,4 @@ mongoose
   .catch(err => console.log('err', err));
 
 module.exports.Phone = require('./phone');
+module.exports.Processor = require('./processor');
