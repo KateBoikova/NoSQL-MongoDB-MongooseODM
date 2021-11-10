@@ -1,4 +1,5 @@
 const createError = require('http-errors');
+const { update } = require('../models/phone');
 const { Phone } = require('./../models');
 
 module.exports.createPhone = async (req, res, next) => {
@@ -36,5 +37,40 @@ module.exports.getPhoneById = async (req, res, next) => {
     next(createError(404, 'Phone not found'));
   } catch (e) {
     next(e);
+  }
+};
+
+module.exports.updatePhoneById = async (req, res, next) => {
+  const {
+    params: { phoneId },
+  } = req;
+
+  try {
+    const updatedPhone = await Phone.findOneAndDelete(phoneId, body, {
+      runValidators: true,
+      new: true,
+    });
+    if (updatedPhone) {
+      return res.status(200).send({ data: updatedPhone });
+    }
+    next(createError(404, 'Phone not found'));
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports.deletePhoneById = async (req, res, next) => {
+  const {
+    params: { phoneId },
+  } = req;
+
+  try {
+    const deletedPhone = await Phone.findByIdAndDelete(phoneId);
+    if (deletedPhone) {
+      return res.status(200).send({ data: deletedPhone });
+    }
+    next(createError(404, 'Phone not found'));
+  } catch (err) {
+    next(err);
   }
 };
