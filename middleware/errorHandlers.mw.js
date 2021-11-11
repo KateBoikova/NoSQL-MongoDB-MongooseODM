@@ -11,10 +11,11 @@ module.exports.mongooseErrorHandler = (err, req, res, next) => {
       .status(422)
       .send({ errors: [{ title: err.name, details: err.errors }] });
   }
+  next(err);
 };
 
 module.exports.errorHandler = (err, req, res, next) => {
-  if (headersSent) {
+  if (res.headersSent) {
     return;
   }
   res

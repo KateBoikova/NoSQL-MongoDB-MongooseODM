@@ -1,6 +1,9 @@
 const express = require('express');
 const router = require('./router');
-const { mongooseErrorHandler, errorHandler } = require('./middleware');
+const {
+  errorHandler,
+  mongooseErrorHandler,
+} = require('./middleware/errorHandlers.mw');
 
 const app = express();
 

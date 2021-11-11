@@ -14,4 +14,9 @@ processorRouter
   .patch(processorController.updateProcessorById)
   .delete(processorController.deleteProcessorById);
 
+processorRouter.get(
+  '/:processorId/phones',
+  processorController.getPhonesWithThisProcessor
+);
+
 module.exports = processorRouter;

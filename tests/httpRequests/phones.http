@@ -2,12 +2,12 @@ POST http://localhost:5000/api/phones HTTP/1.1
 Content-Type: application/json
 
 {
-  "model": "SE",
-  "brand": "Apple",
-  "year": 2020,
-  "memoryStorageCapacity": 64,
-  "processor": "Apple Ax",
-  "screenSize": 4.7,
+  "model": "Galaxy M22",
+  "brand": "Samsung",
+  "year": 2021,
+  "memoryStorageCapacity": 128,
+  "processorId": "618c19159f1e65eb3968754d",
+  "screenSize": 6.4,
   "NFC": true
 }
 
@@ -22,6 +22,12 @@ GET http://localhost:5000/api/phones/:phoneId HTTP/1.1
 ###
 
 PATCH http://localhost:5000/api/phones/:phoneId HTTP/1.1
+Content-Type: application/json
+
+{
+  "year": 2021
+}
+
 
 ###
 

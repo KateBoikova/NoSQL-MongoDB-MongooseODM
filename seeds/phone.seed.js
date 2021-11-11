@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Phone } = require('./../models');
+const { Phone } = require('../models');
 
 const phonesDb = [
   {
@@ -7,7 +7,7 @@ const phonesDb = [
     brand: 'Samsung',
     year: 2021,
     memoryStorageCapacity: 128,
-    processor: 'Mediatek',
+    processorId: mongoose.Types.ObjectId('618c19159f1e65eb3968754d'),
     screenSize: 6.4,
     NFC: true,
   },
@@ -16,7 +16,7 @@ const phonesDb = [
     brand: 'Xiaomi',
     year: 2021,
     memoryStorageCapacity: 64,
-    processor: 'Qualcomm Snapdragon',
+    processorId: mongoose.Types.ObjectId('618c19979f1e65eb39687550'),
     screenSize: 6.67,
     NFC: true,
   },
@@ -25,7 +25,7 @@ const phonesDb = [
     brand: 'Samsung',
     year: 2021,
     memoryStorageCapacity: 128,
-    processor: 'Qualcomm Snapdragon',
+    processorId: mongoose.Types.ObjectId('618c19979f1e65eb39687550'),
     screenSize: 6.5,
     NFC: true,
   },
@@ -34,7 +34,7 @@ const phonesDb = [
     brand: 'Huawei',
     year: 2021,
     memoryStorageCapacity: 128,
-    processor: 'HiSilicon Kirin',
+    processorId: mongoose.Types.ObjectId('618c19bd9f1e65eb39687552'),
     screenSize: 6.67,
     NFC: true,
   },
@@ -43,7 +43,7 @@ const phonesDb = [
     brand: 'Nokia',
     year: 2021,
     memoryStorageCapacity: 64,
-    processor: 'Qualcomm Snapdragon',
+    processorId: mongoose.Types.ObjectId('618c19979f1e65eb39687550'),
     screenSize: 6.39,
     NFC: true,
   },
@@ -52,7 +52,7 @@ const phonesDb = [
     brand: 'Motorola',
     year: 2021,
     memoryStorageCapacity: 128,
-    processor: 'Qualcomm Snapdragon',
+    processorId: mongoose.Types.ObjectId('618c19979f1e65eb39687550'),
     screenSize: 6.5,
     NFC: true,
   },
@@ -61,7 +61,7 @@ const phonesDb = [
     brand: 'Apple',
     year: 2021,
     memoryStorageCapacity: 128,
-    processor: 'Apple Ax',
+    processorId: mongoose.Types.ObjectId('618c19d99f1e65eb39687555'),
     screenSize: 5.4,
     NFC: true,
   },

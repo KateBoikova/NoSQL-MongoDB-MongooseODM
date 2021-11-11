@@ -7,7 +7,7 @@ module.exports.createPhone = async (req, res, next) => {
     const newPhoneInstance = new Phone(body);
     const createdPhone = await newPhoneInstance.save();
     if (createdPhone) {
-      res.status(200).send(createdPhone);
+      return res.status(200).send(createdPhone);
     }
     next(createError(400, 'Bad request'));
   } catch (e) {
@@ -42,10 +42,11 @@ module.exports.getPhoneById = async (req, res, next) => {
 module.exports.updatePhoneById = async (req, res, next) => {
   const {
     params: { phoneId },
+    body,
   } = req;
 
   try {
-    const updatedPhone = await Phone.findOneAndDelete(phoneId, body, {
+    const updatedPhone = await Phone.findOneAndUpdate(phoneId, body, {
       runValidators: true,
       new: true,
     });
